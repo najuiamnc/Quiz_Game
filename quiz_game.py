@@ -1,40 +1,39 @@
-print("Welcome to my computer quiz!")
+print("--- BEM-VINDO AO QUIZ DE TECNOLOGIA ---")
 
-playing = input("Do you want to play? ")
+jogar = input("Você quer iniciar o jogo? (sim/nao): ").lower()
 
-if playing.lower() != "yes":
+if jogar != "sim":
+    print("Fica para a próxima! Tchau.")
     quit()
 
-print("Okay! Let's play :)")
-score = 0
+print("Ótimo! Vamos começar...")
+pontuacao = 0
 
-answer = input("What does CPU stand for? ")
-if answer.lower() == "central processing unit":
-    print('Correct!')
-    score += 1
+# Pergunta 1
+resposta = input("\n1. O que significa a sigla CPU? ").lower()
+if resposta == "unidade central de processamento" or resposta == "central processing unit":
+    print("Correto! ✅")
+    pontuacao += 1
 else:
-    print("Incorrect!")
+    print("Incorreto! ❌")
 
-answer = input("What does GPU stand for? ")
-if answer.lower() == "graphics processing unit":
-    print('Correct!')
-    score += 1
+# Pergunta 2
+resposta = input("2. O que significa a sigla RAM? ").lower()
+if resposta == "memoria de acesso aleatorio" or resposta == "random access memory":
+    print("Correto! ✅")
+    pontuacao += 1
 else:
-    print("Incorrect!")
+    print("Incorreto! ❌")
 
-answer = input("What does RAM stand for? ")
-if answer.lower() == "random access memory":
-    print('Correct!')
-    score += 1
+# Pergunta 3
+resposta = input("3. Qual a linguagem de programação que usa a logo de uma cobra? ").lower()
+if resposta == "python":
+    print("Correto! ✅")
+    pontuacao += 1
 else:
-    print("Incorrect!")
+    print("Incorreto! ❌")
 
-answer = input("What does PSU stand for? ")
-if answer.lower() == "power supply":
-    print('Correct!')
-    score += 1
-else:
-    print("Incorrect!")
+print(f"\nFim do Quiz! Você acertou {pontuacao} perguntas.")
+print(f"Sua porcentagem de acerto foi de {(pontuacao / 3) * 100:.2f}%.")
 
-print("You got " + str(score) + " questions correct!")
-print("You got " + str((score / 4) * 100) + "%.")
+input("\nO jogo acabou. Pressione ENTER para sair...")
